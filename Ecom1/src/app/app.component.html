@@ -1,0 +1,16 @@
+<app-header></app-header>
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+<h1>Angular 10 Image Upload with Preview - ItSolutionStuff.com</h1>
+
+           <p-fileUpload name="files[]" url="src/assets/Images/" (onUpload)="onUpload($event)"
+            [multiple]="true" accept="image/*" [maxFileSize]="1000000">
+            <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                </ul>
+            </ng-template>
+    </p-fileUpload>
+    <p-messages></p-messages>
+
